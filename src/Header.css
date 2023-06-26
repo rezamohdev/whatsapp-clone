@@ -1,0 +1,13 @@
+.header-container {
+  position: sticky;
+}
+.header {
+  height: 55px;
+  border-bottom: 1px solid rgb(226, 226, 226);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__left-buttons > .MuiButtonBase-root {
+  margin: 0 0 0 15px;
+}

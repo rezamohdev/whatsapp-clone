@@ -1,23 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
+import Header from './Header';
+import UserCard from './UserCard';
+import ChatPanel from './ChatPanel';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className='sidebar'>
+        <Header />
+        <UserCard time="6:30" userName="Reza Mohammadi" seen={true} delivered={true} attach="" message={"Hi my dear friend"} />
+        <UserCard time="2:00" userName="John Doe" seen={true} delivered={true} attach="" message={"Hi my dear friend"} />
+        <UserCard time="1:56" userName="Michael " seen={true} delivered={true} attach="" message={"Hi my dear friend"} />
+        <UserCard time="12:00" userName="Lisa" seen={true} delivered={true} attach="voice" message={""} />
+        <UserCard time="18:45" userName="Unkown user" seen={true} delivered={true} attach="" message={"Hi my dear friend"} />
+      </div>
+      <ChatPanel />
     </div>
   );
 }

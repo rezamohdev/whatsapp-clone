@@ -1,0 +1,11 @@
+import { IconButton } from '@mui/material';
+function IconButton({ button }) {
+    return (
+        <div className="icon-button">
+            <IconButton aria-label="delete">
+                {button}
+            </IconButton>
+        </div>
+    )
+}
+export default IconButton;
