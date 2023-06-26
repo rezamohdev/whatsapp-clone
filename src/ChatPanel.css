@@ -8,8 +8,8 @@
 }
 .chat-panel__header {
   width: 100%;
-  display: flex;
   justify-content: space-between;
+  display: flex;
   padding: 10px 16px;
 }
 .chat-panel__user-info {
@@ -31,6 +31,8 @@
   font-size: 13px;
 }
 .chat-panel__body {
+  padding: 10px 16px;
+  width: 100%;
   background: url("./bg-chat.png");
   height: 80vh;
 }

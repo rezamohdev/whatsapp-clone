@@ -15,7 +15,7 @@ function Header() {
         <div className="header-container">
             <div className="header">
                 <Button>
-                    <Avatar alt="avatar" src={avatarImg} />
+                    <Avatar alt="avatar" src={'https://img.freepik.com/free-psd/3d-illustration-person-with-sunglasses_23-2149436188.jpg?w=360'} />
                 </Button>
                 <div className="header__left-buttons">
                     <IconButton >

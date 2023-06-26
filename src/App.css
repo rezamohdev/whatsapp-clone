@@ -17,7 +17,7 @@ body::-webkit-scrollbar {
 }
 .App {
   display: grid;
-  grid-template-columns: 420px 1fr;
+  grid-template-columns: 420px auto;
   gap: 0;
   padding: 0;
   margin: 0;

@@ -20,7 +20,6 @@ function ChatPanel() {
                 </div>
             </div>
             <div className="chat-panel__body">
-
             </div>
             <div className="chat-panel__footer"></div>
         </div>
