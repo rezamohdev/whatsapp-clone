@@ -4,6 +4,7 @@ import { Avatar, Button, IconButton } from '@mui/material';
 import avatarImg from './avatar.jpg';
 import {
     ChatRounded,
+    DonutLargeRounded,
     Groups2Rounded,
     HistoryToggleOffRounded,
     MoreVertRounded
@@ -22,7 +23,7 @@ function Header() {
                         <Groups2Rounded />
                     </IconButton>
                     <IconButton >
-                        <HistoryToggleOffRounded />
+                        <DonutLargeRounded />
                     </IconButton>
                     <IconButton>
                         <ChatRounded />
