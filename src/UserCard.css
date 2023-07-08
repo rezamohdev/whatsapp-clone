@@ -36,7 +36,10 @@
 }
 .card__time {
   font-size: 12px;
-  color: rgb(92, 92, 92);
+  color: rgb(92, 92, 92) !important;
+}
+.attach {
+  color: grey;
 }
 .card__message-seen {
   color: var(--blue-seen);

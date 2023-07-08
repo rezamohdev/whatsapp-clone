@@ -1,0 +1,10 @@
+.homepage {
+  display: grid;
+  place-items: center;
+}
+
+.centeredImage {
+  border-radius: 30px;
+  width: 430px;
+  border: 2px solid #42cca8;
+}

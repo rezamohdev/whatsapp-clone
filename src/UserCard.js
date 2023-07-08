@@ -10,11 +10,11 @@ import {
 } from '@mui/icons-material';
 function getIcon(attach) {
     if (attach === "image") {
-        return (<ImageRounded />)
+        return (<ImageRounded className='attach' />)
     } else if (attach === 'voice') {
-        return (<MicRounded />)
+        return (<MicRounded className='attach' />)
     } else if (attach === 'video') {
-        return (<VideocamRounded />)
+        return (<VideocamRounded className='attach' />)
     }
 }
 function UserCard({ time, userName, message, attach, delivered, seen }) {
@@ -28,8 +28,8 @@ function UserCard({ time, userName, message, attach, delivered, seen }) {
                     <span className='card__time'>{time}</span>
                 </div>
                 <span className='card__detail'>
-                    {seen === true && <DoneAllRounded className='card__message-seen' /> ||
-                        delivered === true && <DoneRounded />
+                    {seen === true && <DoneAllRounded className='card__message-seen attach' /> ||
+                        delivered === true && <DoneRounded className='attach' />
                     }
                     {getIcon(attach)}
                     <p className='card__message'>{message}</p>

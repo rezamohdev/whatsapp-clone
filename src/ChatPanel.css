@@ -36,3 +36,36 @@
   background: url("./bg-chat.png");
   height: 80vh;
 }
+.footer {
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+  background-color: #f0f2f5;
+  /* background-color: dodgerblue; */
+  display: flex;
+  gap: 7px;
+  padding: 10px 25px;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+}
+.footer__input {
+  flex: 1;
+  background-color: #fff;
+  height: 40px;
+  padding: 5px 15px;
+  border-radius: 8px;
+}
+.footer__attachment-button {
+  transform: rotateZ(45deg) scaleX(-1);
+  font-size: 25px !important;
+}
+.footer__emoji-button {
+  font-size: 25px !important;
+}
+.footer__send-button {
+  font-size: 25px !important;
+}
+.footer__mic-button {
+  font-size: 25px !important;
+}
