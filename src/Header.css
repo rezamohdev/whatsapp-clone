@@ -11,3 +11,12 @@
 .header__left-buttons > .MuiButtonBase-root {
   margin: 0 0 0 15px;
 }
+.header__menu-button {
+  z-index: 5;
+  width: 197px;
+  height: 350px !important;
+  font-size: 14.5px;
+  font-weight: 400;
+  font-style: normal;
+  color: #565758 !important;
+}

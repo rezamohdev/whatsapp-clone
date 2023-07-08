@@ -69,3 +69,7 @@
 .footer__mic-button {
   font-size: 25px !important;
 }
+.header__menu-button {
+  width: 232px !important;
+  height: 260px !important;
+}

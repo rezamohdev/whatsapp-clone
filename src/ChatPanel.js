@@ -1,6 +1,6 @@
 import React from "react";
 import "./ChatPanel.css";
-import { Avatar, IconButton, Input } from "@mui/material";
+import { Avatar, ClickAwayListener, Grow, IconButton, Input, MenuItem, MenuList, Paper, Popper } from "@mui/material";
 import {
     ArrowBack,
     AttachFileRounded,
@@ -13,12 +13,32 @@ import {
 import { Link } from 'react-router-dom';
 function ChatPanel() {
     const [isTyping, setIsTyping] = React.useState(false);
+    const [open, setOpen] = React.useState(false);
+    const anchorRef = React.useRef(null);
     const handleInputChange = (e) => {
         setIsTyping(true);
         if (e.target.value === '') {
             setIsTyping(false);
         }
     }
+
+    const handleClose = (event) => {
+        if (anchorRef.current && anchorRef.current.contains(event.target)) {
+            return;
+        }
+    }
+    function handleListKeyDown(event) {
+        if (event.key === 'Tab') {
+            event.preventDefault();
+            setOpen(false);
+        } else if (event.key === 'Escape') {
+            setOpen(false);
+        }
+    }
+    const handleToggle = () => {
+        setOpen((prevOpen) => !prevOpen);
+    };
+
     return (
         <div className="chat-panle">
             <div className="chat-panel__header">
@@ -38,7 +58,53 @@ function ChatPanel() {
                 </div>
                 <div className="chat-pnale__actions">
                     <IconButton><SearchRounded /></IconButton>
-                    <IconButton><MoreVertRounded /></IconButton>
+                    <IconButton
+                        ref={anchorRef}
+                        id="composition-button"
+                        aria-controls={open ? 'composition-menu' : undefined}
+                        aria-expanded={open ? 'true' : undefined}
+                        aria-haspopup="true"
+                        onClick={handleToggle}
+                    >
+                        <MoreVertRounded />
+                    </IconButton>
+                    <Popper
+                        open={open}
+                        anchorEl={anchorRef.current}
+                        role={undefined}
+                        placement="bottom-start"
+                        transition
+                        disablePortal
+                        className="header__menu-button"
+                    >
+                        {({ TransitionProps, placement }) => (
+                            <Grow
+                                {...TransitionProps}
+                                style={{
+                                    transformOrigin:
+                                        placement === 'top-start' ? 'left top' : 'right top',
+                                }}
+                            >
+                                <Paper>
+                                    <ClickAwayListener onClickAway={handleClose}>
+                                        <MenuList
+                                            autoFocusItem={open}
+                                            id="composition-menu"
+                                            aria-labelledby="composition-button"
+                                            onKeyDown={handleListKeyDown}
+                                        >
+                                            <MenuItem onClick={handleClose}>Contact info</MenuItem>
+                                            <MenuItem onClick={handleClose}>Select messages</MenuItem>
+                                            <MenuItem onClick={handleClose}>Close chat</MenuItem>
+                                            <MenuItem onClick={handleClose}>Disappearing messages</MenuItem>
+                                            <MenuItem onClick={handleClose}>Clear messages</MenuItem>
+                                            <MenuItem onClick={handleClose}>Delete chat</MenuItem>
+                                        </MenuList>
+                                    </ClickAwayListener>
+                                </Paper>
+                            </Grow>
+                        )}
+                    </Popper>
                 </div>
             </div>
             <div className="chat-panel__body">
