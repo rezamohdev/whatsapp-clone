@@ -5,6 +5,7 @@
   --primary-strong: #111b21;
   --primary: #3b4a54;
   --secondary: #667781;
+  --app-background-stripe: #00c69b;
 }
 :root::-webkit-scrollbar {
   display: none;
